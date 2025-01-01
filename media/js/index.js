@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // Utility function to fetch transaction types
 async function fetchTransactionTypes() {
-  const response = await fetch('https://spendwise-backend-ggixkn6mu-rider4585s-projects.vercel.appapi/getTransactionTypes');
+  const response = await fetch('https://spendwise-backend-ggixkn6mu-rider4585s-projects.vercel.app/api/getTransactionTypes');
   if (!response.ok) {
     throw new Error(`Failed to fetch transaction types: ${response.statusText}`);
   }
@@ -145,7 +145,7 @@ function addEventListenersForForm() {
 async function addTransaction(data) {
   if (navigator.onLine) {
     try {
-      const response = await fetch('https://spendwise-backend-ggixkn6mu-rider4585s-projects.vercel.appapi/addTransaction', {
+      const response = await fetch('https://spendwise-backend-ggixkn6mu-rider4585s-projects.vercel.app/api/addTransaction', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
