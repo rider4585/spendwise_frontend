@@ -1,0 +1,22 @@
+{
+    "name": "SpendWise",
+    "short_name": "SpendWise",
+    "description": "An app to manage and track expenses efficiently.",
+    "version": "1.0.0",
+    "start_url": "/src/home.html",
+    "display": "standalone",
+    "background_color": "#1a1a2e",
+    "theme_color": "#1a1a2e",
+    "orientation": "portrait",
+    "icons": [{
+            "src": "/media/icons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/media/icons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

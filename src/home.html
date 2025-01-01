@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpendWise</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="stylesheet" href="../media/css/output.css">
+  <link rel="icon" sizes="16x16" href="../media/icons/icon-16x16.png" type="image/png">
+  <link rel="icon" sizes="32x32" href="../media/icons/icon-32x32.png" type="image/png">
+  <link rel="icon" sizes="192x192" href="../media/icons/icon-192x192.png" type="image/png">
+  <link rel="apple-touch-icon" href="../media/icons/apple-touch-icon.png">
+</head>
+
+<body class="bg-gray-900 max-h-screen text-white select-none">
+  <!-- Header -->
+  <header
+    class="fixed top-0 w-full bg-gray-900 text-center py-3 border-b border-indigo-900 text-gray-200 font-sans font-bold text-2xl">
+    SpendWise
+  </header>
+
+  <!-- Main Content -->
+  <main class="mt-16 mb-16 px-2">
+    <!-- Balance Section -->
+    <!-- <div class="m-2 w-auto rounded-sm bg-gray-800 grid grid-cols-12 py-2 px-2 shadow-sm">
+      <div class="col-span-5">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6 inline text-sky-300">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3" />
+          </svg>
+          <span class="ps-1 align-middle text-gray-100">Balance</span>
+        </span>
+      </div>
+      <div class="col-span-7 text-center font-bold text-lg">
+        <span>₹</span>
+        <span id="current-balance">61,000</span>
+      </div>
+    </div> -->
+
+    <!-- Income and Expense Section -->
+    <!-- <div class="m-2 w-auto mt-2 rounded-sm grid grid-cols-2 gap-2 shadow-sm">
+      <div class="rounded-sm px-2 py-1 bg-gray-800">
+        <div class="text-sm text-gray-400">Income</div>
+        <div class="font-bold text-lg">
+          <span class="text-green-400">₹</span>
+          <span id="total-income">1,14,000</span>
+        </div>
+      </div>
+      <div class="rounded-sm px-2 py-1 bg-gray-800">
+        <div class="text-sm text-gray-400">Expense</div>
+        <div class="font-bold text-lg">
+          <span class="text-red-400">₹</span>
+          <span id="total-expense">36,000</span>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Transaction Form -->
+    <div class="m-2 w-auto mt-2 rounded-sm shadow-sm">
+      <form  id="transactionForm" class="bg-gray-800 p-6 rounded-lg shadow-md w-full text-white">
+        <!-- Amount Input -->
+        <div class="mb-4">
+          <label for="amount" class="block text-sm font-medium text-gray-300">Amount</label>
+          <input type="number" id="amount" name="amount"
+            class="mt-1 p-2 border border-gray-600 rounded-md w-full bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            placeholder="Enter amount" required>
+        </div>
+
+        <!-- Type Dropdown -->
+        <div class="mb-4">
+          <label for="type" class="block text-sm font-medium text-gray-300">Type</label>
+          <select id="type" name="type"
+            class="mt-1 p-2 border border-gray-600 rounded-md w-full bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            required>
+            <option value="">Select Type</option>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+        </div>
+
+        <!-- Category Dropdown -->
+        <div class="mb-4">
+          <label for="category" class="block text-sm font-medium text-gray-300">Category</label>
+          <select id="category" name="category"
+            class="mt-1 p-2 border border-gray-600 rounded-md w-full bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            required>
+          </select>
+        </div>
+
+        <!-- Note Text Area -->
+        <div class="mb-4">
+          <label for="note" class="block text-sm font-medium text-gray-300">Note</label>
+          <textarea id="note" name="note" rows="2"
+            class="mt-1 p-2 border border-gray-600 rounded-md w-full bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            placeholder="Add any additional notes here"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit"
+          class="w-full bg-indigo-600 text-white p-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          Submit
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Bottom Navbar -->
+  <!-- <footer class="fixed bottom-0 w-full bg-gray-900 py-2 border-t border-gray-800">
+    <div class="flex justify-around text-center text-gray-400">
+
+      <a href="#home" class="flex flex-col items-center text-violet-500">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M3 12l2.25 2.25M21 12l-2.25-2.25M6 9h12M6 15h12M10 6h4m-5 6h6" />
+        </svg>
+        <span class="text-xs">Home</span>
+      </a>
+
+
+      <a href="./history.html" class="flex flex-col items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2m4-1a9 9 0 1 1-6.324-8.775" />
+        </svg>
+        <span class="text-xs">History</span>
+      </a>
+
+      <a href="#emi-tracker" class="flex flex-col items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M11.25 9a1.5 1.5 0 1 1 3 0v6a1.5 1.5 0 0 1-3 0V9zM12 4.5a9 9 0 1 0 9 9" />
+        </svg>
+        <span class="text-xs">EMI Tracker</span>
+      </a>
+    </div>
+  </footer> -->
+
+  <script src="../media/js/index.js"></script>
+</body>
+
+</html>
